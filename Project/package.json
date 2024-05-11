@@ -1,15 +1,15 @@
 {
-  "name": "serverjs",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "url": "^0.11.3"
+    "express": "^4.19.2"
   }
 }

@@ -2,9 +2,9 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 
-const myServer = http.createServer((req, res) => {
+const myHandler = (req, res) => {
   const log = `${Date.now()} ${req.url} New request recived \n `;
-  const myUrl = url.parse(req.url , true);
+  const myUrl = url.parse(req.url, true);
   console.log(myUrl);
   fs.appendFile("log.txt", log, (err, data) => {
     switch (myUrl.pathname) {
@@ -23,6 +23,8 @@ const myServer = http.createServer((req, res) => {
         res.end("  404 Not Found!!");
     }
   });
-});
+};
+
+const myServer = http.createServer(myHandler);
 
 myServer.listen(4500, () => console.log("server started"));
